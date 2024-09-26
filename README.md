@@ -1,5 +1,4 @@
 # Proj1
-## Descriptions
 This is my descriptions
 
 ## How to Get Started
