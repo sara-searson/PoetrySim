@@ -20,8 +20,31 @@ A simple game where you select a number of words from a given set. Players are t
 
 
 ## Wireframe, Concept Art, Logo, etc. 
-To add images: ![alt text/description] (img.png)
+From wireframes: 
+![wireframe of game concept](assets/PoetrySimWireframes.jpg)
 
+to pseudoCode:
+![a snippet of some pseudocode done for project](assets/pseudoCodeSnippet.png)
+
+to a couple of mockups (I know I didn't need this, I'm sorry):
+![basic mobile mockup](assets/basicMobile.png)
+![basic web mockup](assets/basicWeb.png)
+or, even cuter: 
+![cute mobile mockup](assets/cuteMobile.png)
+![cute web mockup](assets/cuteWeb.png)
+
+and a simple logo (as above, so below): 
+![a basic logo](assets/logos/line%20red.png)
+
+
+## Stretch Goals
+### Finish earlier than you thought? Try adding these fun features!
+- Dynamic Background/Image
+- "Judges" with preferred word clouds to match score to
+- A simple storyline
+- - Or more complex? Maybe have endings? :o
+- A real game logo
+- Cute mode (that pink more cartoon style one? Yeah. *that* is a stretch)
 
 ## Credits
 - Used CanvaPro to complete the concept Art, Logo, and other graphics.
