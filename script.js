@@ -15,7 +15,7 @@ const word9 = document.querySelector('#word9')
 const word10 = document.querySelector('#word10')
 const word11 = document.querySelector('#word11')
 const word12 = document.querySelector('#word12')
-const wordChoices = document.querySelector(".word-choices")
+const wordChoices = document.querySelectorAll(".word-choices")
 const nextArrow = document.querySelector('#next-arrow')
 const gameGraphic = document.querySelector('#game-graphic')
 const selWord1 = document.querySelector('#your-word1')
@@ -57,6 +57,8 @@ let page2 = []
 let page3 = []
 
 let pageArray = [page1, page2, page3]
+
+let chosenWords = []
 
 //------------------------functions------------------------//
 //---------------------------------------------------------//
@@ -129,7 +131,7 @@ const updateCloud = (pageNum) => {
     for (i = 0; i < 12; i++) {
         //console.log(`word${i+1}`)
         //console.log(pageNum[i])
-        let word=pageNum[i]
+        let word = pageNum[i]
         document.querySelector(`#word${i + 1}`).innerHTML = word
     }
 }
@@ -164,6 +166,22 @@ const selectWord = () => {
 
 }
 
+const addWord = (newWord) => {
+    if (chosenWords.includes(newWord)) {
+        console.log('choose a new word')
+    } else {
+        console.log(newWord)
+        chosenWords.push(newWord)
+        console.log(chosenWords)
+    }
+}
+
+updateNotebook = () => {
+    for (let i = 0; i < chosenWords.length; i++) {
+        document.querySelector(`#your-word${i+1}`).innerHTML = chosenWords[i]
+    }
+}
+
 const scoreTally = (input) => {
     let cuteScore = 0
     let sillyScore = 0
@@ -193,8 +211,20 @@ backArrow.addEventListener('click', () => {
     prevPage()
 })
 
-// wordChoices.foreEach((func) => {
-//     func.addEventListener('click', () => {
-        
-//     })
-// })
+word1.addEventListener('click', () => {
+    const textValue = word1.textContent
+    console.log(textValue)
+})
+
+wordChoices.forEach((func) => {
+    func.addEventListener('click', () => {
+        const textValue = func.textContent
+        //console.log(textValue)
+        if (chosenWords.length < 10) {
+            addWord(textValue)
+            updateNotebook()
+        } else {
+            console.log('please submit or remove a word')
+        }
+    })
+})
