@@ -1,0 +1,22 @@
+body {
+    background-color: chocolate;
+}
+
+#word-options {
+    background-color: brown;
+}
+
+#selected-words {
+    background-color: brown;
+}
+
+#word-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#back-arrow {
+    opacity: 0;
+}

@@ -46,6 +46,7 @@ and a simple logo (as above, so below): <br />
 - - Or more complex? Maybe have endings? :o
 - A real game logo
 - Cute mode (that pink more cartoon style one? Yeah. *that* is a stretch)
+- Find an API that will generate a random poem to display between levels
 
 ## Credits
 - Used CanvaPro to complete the concept Art, Logo, and other graphics.
