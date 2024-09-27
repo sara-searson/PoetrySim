@@ -26,15 +26,16 @@ From wireframes:
 to pseudoCode:
 ![a snippet of some pseudocode done for project](assets/pseudoCodeSnippet.png)
 
-to a couple of mockups (I know I didn't need this, I'm sorry):
-![basic mobile mockup](assets/basicMobile.png)
-![basic web mockup](assets/basicWeb.png)
-or, even cuter: 
-![cute mobile mockup](assets/cuteMobile.png)
-![cute web mockup](assets/cuteWeb.png)
+to a couple of mockups (I know I didn't need this, I'm sorry):<br />
+<img src="assets/basicWeb.png" height="250px">
+<img src="assets/basicMobile.png" height="250px">
+<br />or, even cuter: <br />
+<img src="assets/cuteWeb.png" height="250px">
+<img src="assets/cuteMobile.png" height="250px">
 
-and a simple logo (as above, so below): 
-![a basic logo](assets/logos/line%20red.png)
+and a simple logo (as above, so below): <br />
+<img src="assets/logos/line%20red.png" height="250px">
+
 
 
 ## Stretch Goals
