@@ -28,6 +28,7 @@ const selWord7 = document.querySelector('#your-word7')
 const selWord8 = document.querySelector('#your-word8')
 const selWord9 = document.querySelector('#your-word9')
 const selWord10 = document.querySelector('#your-word10')
+const notebookWords = document.querySelectorAll('.word-bank')
 const submitWords = document.querySelector('#submit-words')
 
 let currentPage = 1
@@ -176,11 +177,21 @@ const addWord = (newWord) => {
     }
 }
 
-updateNotebook = () => {
+const removeWord = (newWord) => {
+    console.log(newWord)
+    chosenWords.push(newWord)
+    console.log(chosenWords)
+}
+
+const updateNotebook = () => {
     for (let i = 0; i < chosenWords.length; i++) {
         document.querySelector(`#your-word${i+1}`).innerHTML = chosenWords[i]
     }
 }
+
+// const removeFromNotebook = () => {
+//     chosenWords = chosenWords.filer(word => word !=== )
+// }
 
 const scoreTally = (input) => {
     let cuteScore = 0
@@ -227,4 +238,19 @@ wordChoices.forEach((func) => {
             console.log('please submit or remove a word')
         }
     })
+})
+
+notebookWords.forEach((func1) => {
+    func1.addEventListener('click', () => {
+        const textValue = func1.textContent
+        chosenWords = chosenWords.filter(word => word !== textValue)
+        console.log(textValue)
+        console.log(chosenWords)
+        updateNotebook()
+        document.querySelector(`#your-word${chosenWords.length+1}`).innerHTML = ''
+    })
+})
+
+submitWords.addEventListener('click', () => {
+
 })
