@@ -29,7 +29,7 @@ const selWord8 = document.querySelector('#your-word8')
 const selWord9 = document.querySelector('#your-word9')
 const selWord10 = document.querySelector('#your-word10')
 const notebookWords = document.querySelectorAll('.word-bank')
-const submitWords = document.querySelector('#submit-words')
+const submitWords = document.querySelector('.submit')
 
 let currentPage = 1
 
@@ -47,7 +47,9 @@ const dramaticWords = ['dramatic1', 'dramatic2', 'dramatic3','dramatic4', 'drama
 
 const sharedWords = ['shared1', 'shared2', 'shared3', 'shared4', 'shared5', 'shared6', 'shared7', 'shared8', 'shared9', 'shared10']
 
-const arrayOfClouds = ['cute', 'silly', 'happy', 'serious', 'dramatic']
+const arrayOfClouds = [cuteWords, sillyWords, happyWords, sadWords, dramaticWords]
+
+const judges = ['cute', 'silly', 'happy', 'sad', 'dramatic']
 
 let wordCloud = []
 
@@ -60,6 +62,12 @@ let page3 = []
 let pageArray = [page1, page2, page3]
 
 let chosenWords = []
+
+let chosenJudges = []
+
+let chosenArrays = []
+
+let turnNumber = 0
 
 //------------------------functions------------------------//
 //---------------------------------------------------------//
@@ -98,6 +106,20 @@ const populateShared = () => {
     }
 }
 
+const pickJudge = () => {
+    let numbers = []
+    for (let i = 0; i < 3; i++) {
+        let number = Math.floor(Math.random() * 4)
+        if (numbers.includes(number)) {
+            i--
+        } else {
+            numbers.push(number)
+            chosenJudges.push(judges[number])
+            chosenArrays.push(arrayOfClouds[number])
+        }
+    }
+}
+
 populateCloud(cuteWords)
 populateCloud(sillyWords)
 populateCloud(happyWords)
@@ -106,6 +128,7 @@ populateCloud(dramaticWords)
 console.log(wordCloud)
 populateShared()
 console.log(wordCloud)
+pickJudge()
 
 const cloudSort = () => {
     wordCloud.sort()
@@ -137,7 +160,30 @@ const updateCloud = (pageNum) => {
     }
 }
 
+const setJudgeImage = () => {
+    let currentJudge = chosenJudges[turnNumber]
+    if (currentJudge === 'cute') {
+        console.log('cute judge')
+        gameGraphic.setAttribute ('src', 'assets/judges/cuteJudge.png')
+    } else if (currentJudge === 'silly') {
+        console.log('silly judge')
+        gameGraphic.setAttribute ('src', 'assets/judges/sillyJudge.png')
+    } else if (currentJudge === 'happy') {
+        console.log('happy judge')
+        gameGraphic.setAttribute ('src', 'assets/judges/happyJudge.png')
+    } else if (currentJudge === 'sad') {
+        console.log('sad judge')
+        gameGraphic.setAttribute ('src', 'assets/judges/sadJudge.png')
+    } else if (currentJudge === 'dramatic') {
+        console.log('dramatic judge')
+        gameGraphic.setAttribute ('src', 'assets/judges/dramaticJudge.png')
+    }
+}
+
 updateCloud(page1)
+console.log(chosenJudges)
+console.log(chosenArrays)
+setJudgeImage()
 
 const nextPage = () => {
     if (currentPage === 1) {
@@ -163,10 +209,6 @@ const prevPage = () => {
     }
 }
 
-const selectWord = () => {
-
-}
-
 const addWord = (newWord) => {
     if (chosenWords.includes(newWord)) {
         console.log('choose a new word')
@@ -189,24 +231,43 @@ const updateNotebook = () => {
     }
 }
 
-// const removeFromNotebook = () => {
-//     chosenWords = chosenWords.filer(word => word !=== )
-// }
+const winner = () => {
 
-const scoreTally = (input) => {
-    let cuteScore = 0
-    let sillyScore = 0
-    for (i = 0; i < input.length; i++) {
-        if (cuteWords.includes(input[i]) === true) {
-            cuteScore+= 0
-        }
-        if (sillyWords.includes(input[i]) === true) {
-            sillyScore+= 0
+}
+
+const scoreTally = () => {
+    let score = 0
+    for (i = 0; i < chosenArrays[turnNumber].length; i++) {
+        if (chosenArrays[turnNumber].includes(chosenWords[i])) {
+            score++
         }
     }
-    if (cuteScore > sillyScore) {
-        score.innterHTML = cuteScore
+    console.log(score)
+    if (turnNumber === 0) {
+        if (score >= 4) {
+            console.log('winner!')
+        } else {
+            console.log('try again!')
+        }
+    } else if (turnNumber === 1) {
+        if (score >= 5) {
+            console.log('winner!')
+        } else {
+            console.log('try again')
+        }
     }
+
+
+    // let cuteScore = 0
+    // let sillyScore = 0
+    // for (i = 0; i < input.length; i++) {
+    //     if (cuteWords.includes(input[i]) === true) {
+    //         cuteScore++
+    //     }
+    // }
+    // if (cuteScore > sillyScore) {
+    //     score.innterHTML = cuteScore
+    // }
 }
 
 //---------------------------DOM--------------------------//
@@ -252,5 +313,8 @@ notebookWords.forEach((func1) => {
 })
 
 submitWords.addEventListener('click', () => {
-
+    if (notebookWords.length < 10) {
+        console.log(`Finish your poem! You have `)
+    }
+    scoreTally()
 })
