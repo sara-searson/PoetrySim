@@ -20,3 +20,7 @@ body {
 #back-arrow {
     opacity: 0;
 }
+
+#new-round {
+    opacity: 0;
+}

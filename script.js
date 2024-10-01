@@ -30,6 +30,7 @@ const selWord9 = document.querySelector('#your-word9')
 const selWord10 = document.querySelector('#your-word10')
 const notebookWords = document.querySelectorAll('.word-bank')
 const submitWords = document.querySelector('.submit')
+const newRound = document.querySelector('#new-round')
 
 let currentPage = 1
 
@@ -232,7 +233,21 @@ const updateNotebook = () => {
 }
 
 const winner = () => {
+    gameGraphic.setAttribute ('src', 'assets/results/win.png')
+    newRound.innerHTML = 'Next Round!'
+    newRound.style.opacity = '1'
+    turnNumber++
+}
 
+const tryAgain = () => {
+    gameGraphic.setAttribute ('src', 'assets/results/lose.png')
+    newRound.innerHTML = 'Try Again?'
+    newRound.style.opacity = '1'
+    if (turnNumber === 1) {
+        turnNumber--
+    } else if (turnNumber === 3) {
+        turnNumber =- 2
+    } 
 }
 
 const scoreTally = () => {
@@ -244,30 +259,43 @@ const scoreTally = () => {
     }
     console.log(score)
     if (turnNumber === 0) {
-        if (score >= 4) {
-            console.log('winner!')
-        } else {
-            console.log('try again!')
-        }
-    } else if (turnNumber === 1) {
         if (score >= 5) {
             console.log('winner!')
+            winner()
+        } else {
+            console.log('try again!')
+            tryAgain()
+        }
+    } else if (turnNumber === 1) {
+        if (score >= 6) {
+            console.log('winner!')
+            winner()
         } else {
             console.log('try again')
+            tryAgain()
+        }
+    }else if (turnNumber === 2) {
+        if (score >= 7) {
+            console.log('winner!')
+            winner()
+        } else {
+            console.log('try again')
+            tryAgain()
         }
     }
+}
 
-
-    // let cuteScore = 0
-    // let sillyScore = 0
-    // for (i = 0; i < input.length; i++) {
-    //     if (cuteWords.includes(input[i]) === true) {
-    //         cuteScore++
-    //     }
-    // }
-    // if (cuteScore > sillyScore) {
-    //     score.innterHTML = cuteScore
-    // }
+const newTurn = () => {
+    updateCloud(page1)
+    console.log(chosenJudges)
+    console.log(chosenArrays)
+    setJudgeImage()
+    selWord1.innerHTML = 'Your words here'
+    let currentPage = 1
+    chosenWords.splice(0, chosenWords.length)
+    for (let i = 2; i < 11; i++) {
+        document.querySelector(`#your-word${i}`).innerHTML = ''
+    }
 }
 
 //---------------------------DOM--------------------------//
@@ -313,8 +341,14 @@ notebookWords.forEach((func1) => {
 })
 
 submitWords.addEventListener('click', () => {
-    if (notebookWords.length < 10) {
-        console.log(`Finish your poem! You have `)
+    if (chosenWords.length < 10) {
+        console.log(`Finish your poem! You have ${10 - chosenWords.length} more words to go!`)
+    } else {
+        scoreTally()
+        console.log(turnNumber)
     }
-    scoreTally()
+})
+
+newRound.addEventListener('click', () => {
+    newTurn()
 })
