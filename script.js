@@ -134,6 +134,9 @@ pickJudge()
 const cloudSort = () => {
     wordCloud.sort()
     console.log(wordCloud)
+    page1.splice(0, page1.length)
+    page2.splice(0, page2.length)
+    page3.splice(0, page3.length)
     for (let a = 0; a < 12; a++) {
         page1.push(wordCloud[a])
     }
@@ -212,7 +215,7 @@ const prevPage = () => {
 
 const addWord = (newWord) => {
     if (chosenWords.includes(newWord)) {
-        console.log('choose a new word')
+        alert('choose a new word')
     } else {
         console.log(newWord)
         chosenWords.push(newWord)
@@ -233,10 +236,17 @@ const updateNotebook = () => {
 }
 
 const winner = () => {
-    gameGraphic.setAttribute ('src', 'assets/results/win.png')
-    newRound.innerHTML = 'Next Round!'
-    newRound.style.opacity = '1'
-    turnNumber++
+    if (turnNumber === 2) {
+        alert('Congrats! You have won the poetry contest!')
+        newRound.innerHTML = 'New Game.'
+        newRound.style.opacity = '1'
+        turnNumber -= 2
+    } else {
+        gameGraphic.setAttribute ('src', 'assets/results/win.png')
+        newRound.innerHTML = 'Next Round!'
+        newRound.style.opacity = '1'
+        turnNumber++
+    }
 }
 
 const tryAgain = () => {
@@ -274,7 +284,7 @@ const scoreTally = () => {
             console.log('try again')
             tryAgain()
         }
-    }else if (turnNumber === 2) {
+    } else if (turnNumber === 2) {
         if (score >= 7) {
             console.log('winner!')
             winner()
@@ -286,15 +296,31 @@ const scoreTally = () => {
 }
 
 const newTurn = () => {
-    updateCloud(page1)
     console.log(chosenJudges)
     console.log(chosenArrays)
     setJudgeImage()
     selWord1.innerHTML = 'Your words here'
-    let currentPage = 1
     chosenWords.splice(0, chosenWords.length)
+    wordCloud.splice(0, wordCloud.length)
+    populateCloud(cuteWords)
+    populateCloud(sillyWords)
+    populateCloud(happyWords)
+    populateCloud(sadWords)
+    populateCloud(dramaticWords)
+    console.log(wordCloud)
+    populateShared()
+    console.log(wordCloud)
+    cloudSort()
+    updateCloud(page1)
     for (let i = 2; i < 11; i++) {
         document.querySelector(`#your-word${i}`).innerHTML = ''
+    }
+    newRound.style.opacity = '0'
+    if (currentPage === 3) {
+        currentPage --
+        prevPage()
+    } if (currentPage === 2) {
+        prevPage()
     }
 }
 
@@ -324,7 +350,7 @@ wordChoices.forEach((func) => {
             addWord(textValue)
             updateNotebook()
         } else {
-            console.log('please submit or remove a word')
+            alert('please submit or remove a word')
         }
     })
 })
@@ -342,7 +368,7 @@ notebookWords.forEach((func1) => {
 
 submitWords.addEventListener('click', () => {
     if (chosenWords.length < 10) {
-        console.log(`Finish your poem! You have ${10 - chosenWords.length} more words to go!`)
+        alert(`Finish your poem! You have ${10 - chosenWords.length} more words to go!`)
     } else {
         scoreTally()
         console.log(turnNumber)
