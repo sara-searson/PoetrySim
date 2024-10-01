@@ -166,22 +166,8 @@ const updateCloud = (pageNum) => {
 
 const setJudgeImage = () => {
     let currentJudge = chosenJudges[turnNumber]
-    if (currentJudge === 'cute') {
-        console.log('cute judge')
-        gameGraphic.setAttribute ('src', 'assets/judges/cuteJudge.png')
-    } else if (currentJudge === 'silly') {
-        console.log('silly judge')
-        gameGraphic.setAttribute ('src', 'assets/judges/sillyJudge.png')
-    } else if (currentJudge === 'happy') {
-        console.log('happy judge')
-        gameGraphic.setAttribute ('src', 'assets/judges/happyJudge.png')
-    } else if (currentJudge === 'sad') {
-        console.log('sad judge')
-        gameGraphic.setAttribute ('src', 'assets/judges/sadJudge.png')
-    } else if (currentJudge === 'dramatic') {
-        console.log('dramatic judge')
-        gameGraphic.setAttribute ('src', 'assets/judges/dramaticJudge.png')
-    }
+    gameGraphic.setAttribute ('src', `assets/judges/${currentJudge}Judge.png`)
+    console.log(`${currentJudge}Judge`)
 }
 
 updateCloud(page1)
@@ -206,6 +192,7 @@ const prevPage = () => {
         updateCloud(page1)
         backArrow.style.opacity = '0'
         currentPage--
+        nextArrow.style.opacity='1'
     } else if (currentPage === 3) {
         updateCloud(page2)
         currentPage--
@@ -253,10 +240,9 @@ const tryAgain = () => {
     gameGraphic.setAttribute ('src', 'assets/results/lose.png')
     newRound.innerHTML = 'Try Again?'
     newRound.style.opacity = '1'
-    if (turnNumber === 1) {
+    pickJudge()
+    for (let i = 1; i < turnNumber.length; i++) {
         turnNumber--
-    } else if (turnNumber === 3) {
-        turnNumber =- 2
     } 
 }
 
@@ -377,4 +363,5 @@ submitWords.addEventListener('click', () => {
 
 newRound.addEventListener('click', () => {
     newTurn()
+    console.log(turnNumber)
 })
