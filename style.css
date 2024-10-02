@@ -1,5 +1,7 @@
 html {
     padding: 0;
+    margin: 0;
+    width: 100vw;
 }
 
 body {
@@ -83,7 +85,7 @@ main {
 
 #game-graphic {
     width: 90vw;
-    height: 40vh;
+    height: 35vh;
     margin-bottom: 2vh;
 }
 
@@ -92,7 +94,7 @@ main {
     position: relative;
     width: 100vw;
     height: 20vh;
-    grid-template-columns: 10vw 60vw 40vw;
+    grid-template-columns: 8vw 60vw 35vw;
     gap: 0px 2vw;
     margin-bottom: 2vh;
     /* align-items: center; */
@@ -131,6 +133,10 @@ main {
     height: 20vh
 }
 
+#submit-words {
+    width: 20vw;
+}
+
 #fin-img {
     height: 18vh;
 }
@@ -140,12 +146,11 @@ footer {
     position: relative;
     width: 100vw;
     grid-template-columns: 20vw 60vw 20vw;
-    gap: 0px 2vw;
     background-color: #f3cca2
 }
 
 #round-results {
-    display: ;
+    display: grid;
     grid-area: 1 / 2 / 2 / 3;
     position: relative;
     z-index: 2;
