@@ -285,7 +285,7 @@ const newTurn = () => {
     console.log(chosenJudges)
     console.log(chosenArrays)
     setJudgeImage()
-    selWord1.innerHTML = 'Your words here'
+    selWord1.innerHTML = 'Start writing!'
     chosenWords.splice(0, chosenWords.length)
     wordCloud.splice(0, wordCloud.length)
     populateCloud(cuteWords)

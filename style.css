@@ -1,7 +1,13 @@
+html {
+    padding: 0;
+}
+
 body {
     background: linear-gradient(black, #c77556);
+    background-size: cover;
     margin: 0;
     max-width: 100%;
+    padding: 0;
 }
 
 header {
@@ -23,42 +29,45 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     width: 90%;
     margin: 0;
     margin-bottom: 2vh;
+    padding: 0;
 }
 
 #word-bubble {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
+    width: 70vw;
     margin: 0;
 }
 
 #back-img {
-    width: 20px;
+    width: 6vw;
 }
 
 #back-arrow {
-    color: transparent;
+    background-color: transparent;
     margin: 0;
+    border: 0;
 }
 
 #next-img {
-    width: 20px;
+    width: 6vw;
+}
+
+#next-arrow {
+    background-color: transparent;
+    margin: 0;
+    border: 0;
 }
 
 .word-choices {
     flex-grow: 1;
     flex-basis: 30%;
     text-align: center;
-    
-}
-
-#selected-words {
-    background-image: url(assets/simple/notebookSimple.png);
-    background-size: cover;
 }
 
 #word-options {
@@ -74,8 +83,81 @@ main {
 
 #game-graphic {
     width: 90vw;
+    height: 40vh;
+    margin-bottom: 2vh;
+}
+
+#notebook {
+    display: grid;
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+    grid-template-columns: 10vw 60vw 40vw;
+    gap: 0px 2vw;
+    margin-bottom: 2vh;
+    /* align-items: center; */
+}
+
+#paper {
+    position: relative;
+    display: grid;
+    width: 70vw;
+    height: 20vh;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+#selected-words {
+    position: relative;
+    display: grid;
+    grid-area: 1 / 2 / 2 / 3;
+    z-index: 2;
+    margin: 1vh;
+    grid-template-columns: 1fr 1fr;
+    height: 20vh;
+    padding: 0;
+}
+
+.word-bank {
+    margin: 0;
+    font-size: large;
+    height: 4vh;
+}
+
+#send {
+    grid-area: 1 / 3 / 2 / 4;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    height: 20vh
+}
+
+#fin-img {
+    height: 18vh;
+}
+
+footer {
+    display: grid;
+    position: relative;
+    width: 100vw;
+    grid-template-columns: 20vw 60vw 20vw;
+    gap: 0px 2vw;
+    background-color: #f3cca2
+}
+
+#round-results {
+    display: ;
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+    z-index: 2;
 }
 
 #new-round {
     opacity: 0;
+}
+
+#info {
+    display: grid;
+    margin: 0;
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
 }
