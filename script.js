@@ -36,17 +36,17 @@ let currentPage = 1
 
 //-------------------------arrays-------------------------//
 
-const cuteWords = ['cute1', 'cute2', 'cute3', 'cute4', 'cute5', 'cute6', 'cute7', 'cute8', 'cute9', 'cute10', 'shared1', 'shared2', 'shared3', 'shared4']
+const cuteWords = ['snuggle', 'thimble', 'boop', 'sleepy', 'twinkle', 'squishy', 'sweet', 'candy', 'sprinkle', 'daisy', 'bubble', 'giggle', 'toodles', 'flibbertigibbet']
 
-const sillyWords = ['silly1', 'silly2', 'silly3', 'silly4', 'silly5', 'silly6', 'silly7', 'silly8', 'silly9', 'silly10', 'shared1', 'shared5', 'share6', 'shared7']
+const sillyWords = ['noodle', 'periwinkle', 'jimminies', 'kerfuffle', 'twiddle', 'looky', 'kumquat', 'banana', 'boing', 'doodle', 'bubble', 'dink', 'whoopsie', 'shennanigans']
 
-const happyWords = ['happy1', 'happy2', 'happy3', 'happy4', 'happy5', 'happy6', 'happy7', 'happy8', 'happy9', 'happy10', 'shared2', 'shared5', 'shared8', 'shared9']
+const happyWords = ['smile', 'spring', 'warm', 'laugh', 'beautiful', 'flower', 'friend', 'love', 'family', 'gift', 'giggle', 'dink', 'bittersweet', 'overjoyed']
 
-const sadWords = ['sad1', 'sad2', 'sad3', 'sad4', 'sad5', 'sad6', 'sad7', 'sad8', 'sad9', 'sad10', 'shared3', 'shared6', 'shared8', 'shared10']
+const sadWords = ['rain', 'tear', 'frown', 'moody', 'loss', 'pain', 'hurt', 'blue', 'gray', 'colorless', 'toodles', 'whoopsie', 'bittersweet', 'melancholy']
 
-const dramaticWords = ['dramatic1', 'dramatic2', 'dramatic3','dramatic4', 'dramatic5', 'dramatic6', 'dramatic7', 'dramatic8', 'dramatic9', 'dramatic10', 'shared4', 'shared7', 'shared9', 'shared10']
+const dramaticWords = ['stage', 'theater', 'curtains','opratic', 'theatrical', 'vivd', 'sensational', 'astonishing', 'efferevescent', 'epic', 'flibbertigibbet', 'shennanigans', 'overjoyed', 'melancholy']
 
-const sharedWords = ['shared1', 'shared2', 'shared3', 'shared4', 'shared5', 'shared6', 'shared7', 'shared8', 'shared9', 'shared10']
+const sharedWords = ['bubble', 'giggle', 'toodles', 'flibbertigibbet', 'dink', 'whoopsie', 'shennanigans', 'bittersweet', 'overjoyed', 'melancholy']
 
 const arrayOfClouds = [cuteWords, sillyWords, happyWords, sadWords, dramaticWords]
 
