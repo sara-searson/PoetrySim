@@ -226,12 +226,12 @@ const winner = () => {
     if (turnNumber === 2) {
         alert('Congrats! You have won the poetry contest!')
         newRound.innerHTML = 'New Game.'
-        newRound.style.opacity = '1'
+        newRound.style.display = 'flex'
         turnNumber -= 2
     } else {
         gameGraphic.setAttribute ('src', 'assets/results/win.png')
         newRound.innerHTML = 'Next Round!'
-        newRound.style.opacity = '1'
+        newRound.style.display = 'flex'
         turnNumber++
     }
 }
@@ -239,7 +239,7 @@ const winner = () => {
 const tryAgain = () => {
     gameGraphic.setAttribute ('src', 'assets/results/lose.png')
     newRound.innerHTML = 'Try Again?'
-    newRound.style.opacity = '1'
+    newRound.style.display = 'flex'
     pickJudge()
     for (let i = 1; i < turnNumber.length; i++) {
         turnNumber--
@@ -301,7 +301,7 @@ const newTurn = () => {
     for (let i = 2; i < 11; i++) {
         document.querySelector(`#your-word${i}`).innerHTML = ''
     }
-    newRound.style.opacity = '0'
+    newRound.style.display = 'none'
     if (currentPage === 3) {
         currentPage --
         prevPage()

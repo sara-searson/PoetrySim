@@ -8,7 +8,7 @@ body {
     background: linear-gradient(black, #c77556);
     background-size: cover;
     margin: 0;
-    max-width: 100%;
+    width: 100%;
     padding: 0;
 }
 
@@ -16,12 +16,12 @@ header {
     display: flex;
     justify-content: center;
     background-color: #c77556;
-    margin: 0;
 }
 
 #logo {
-    height: 4vh;
-    margin: 0
+    height: 9vh;
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -158,10 +158,17 @@ footer {
     grid-area: 1 / 2 / 2 / 3;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 #new-round {
-    opacity: 0;
+    display: flex;
+    text-align: center;
+    font-size: xx-large;
+    border: 0;
+    background-color: #f3cca2;
+    z-index: 2;
+    justify-content: center;
 }
 
 #info {
@@ -178,12 +185,19 @@ footer {
     }
 
     header {
-        height: 100px;
+        height: 17vh;
     }
+
+    #logo {
+        height: 17vh;
+        margin: 0;
+        padding: 0;
+    }
+    
 
     #word-options {
         width:550px;
-        max-height: 200px;
+        max-height: 20vh;
         background: none;
     }
 
@@ -206,11 +220,13 @@ footer {
 
     #game-graphic {
         max-width: 400px;
+        height: 30vh;
     }
 
     #notebook {
         max-width: 500px;
-        grid-template-columns: 50px 325px 125px
+        grid-template-columns: 50px 325px 125px;
+        height: 20vh;
     }
 
     #paper {
@@ -227,6 +243,19 @@ footer {
         text-align: center;
         font-size: xx-large;
         padding: 0;
-        height: 100px;
+        height: 11vh;
+    }
+
+    #round-results {
+        height: 10vh;
+    }
+
+    #info {
+        height: 10vh;
+        padding: 0;
+    }
+
+    #rules {
+        margin: 25px;
     }
 }
