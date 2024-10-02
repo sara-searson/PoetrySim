@@ -1,13 +1,64 @@
 body {
-    background-color: chocolate;
+    background: linear-gradient(black, #c77556);
+    margin: 0;
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #c77556;
+    margin: 0%;
+    padding-top: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #word-options {
-    background-color: brown;
+    background-color: #f3cca2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: 0;
+    margin-bottom: 2vh;
+}
+
+#word-bubble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0;
+}
+
+#back-img {
+    width: 20px;
+}
+
+#back-arrow {
+    color: transparent;
+    margin: 0;
+}
+
+#next-img {
+    width: 20px;
+}
+
+.word-choices {
+    flex-grow: 1;
+    flex-basis: 30%;
+    text-align: center;
+    
 }
 
 #selected-words {
-    background-color: brown;
+    background-image: url(assets/simple/notebookSimple.png);
+    background-size: cover;
 }
 
 #word-options {
@@ -19,6 +70,10 @@ body {
 
 #back-arrow {
     opacity: 0;
+}
+
+#game-graphic {
+    width: 90vw;
 }
 
 #new-round {
