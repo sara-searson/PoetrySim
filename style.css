@@ -16,8 +16,12 @@ header {
     display: flex;
     justify-content: center;
     background-color: #c77556;
-    margin: 0%;
-    padding-top: 0;
+    margin: 0;
+}
+
+#logo {
+    height: 4vh;
+    margin: 0
 }
 
 main {
@@ -165,4 +169,64 @@ footer {
     margin: 0;
     grid-area: 1 / 2 / 2 / 3;
     position: relative;
+}
+
+@media screen and (min-width: 500px){
+    body {
+        /* width: 50%; */
+        align-items: center;
+    }
+
+    header {
+        height: 100px;
+    }
+
+    #word-options {
+        width:550px;
+        max-height: 200px;
+        background: none;
+    }
+
+    #word-bubble {
+        width: 400px;
+        background-color: #f3cca2;
+    }
+
+    #back-img {
+        width: 50px;
+    }
+
+    #next-img {
+        width: 50px;
+    }
+
+    .word-choices {
+        flex-basis: 25%;
+    }
+
+    #game-graphic {
+        max-width: 400px;
+    }
+
+    #notebook {
+        max-width: 500px;
+        grid-template-columns: 50px 325px 125px
+    }
+
+    #paper {
+        width: 375px;
+    }
+
+    #fin-image {
+        width: 100px
+    }
+
+    footer {
+        height: 100px;
+        grid-template-columns: 1fr 500px 1fr;
+        text-align: center;
+        font-size: xx-large;
+        padding: 0;
+        height: 100px;
+    }
 }
