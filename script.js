@@ -85,7 +85,7 @@ let turnNumber = 0
 
 
 async function generatePoem() {
-
+    
     const prompt = `Write me a ${chosenJudges[turnNumber]} poem containing the words ${chosenWords.join(', ')} and using only eight lines. Please make sure the poem is complete.`
     console.log(prompt)
 
