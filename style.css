@@ -74,6 +74,8 @@ main {
     flex-grow: 1;
     flex-basis: 30%;
     text-align: center;
+    font-family: 'Mali', cursive;
+    font-size: 13px;
 }
 
 #word-options {
@@ -127,6 +129,7 @@ main {
     margin: 0;
     font-size: large;
     height: 4vh;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 #send {
@@ -150,7 +153,8 @@ footer {
     position: relative;
     width: 100vw;
     grid-template-columns: 20vw 60vw 20vw;
-    background-color: #f3cca2
+    background-color: #f3cca2;
+    font-family: 'Mali', cursive;
 }
 
 #round-results {
