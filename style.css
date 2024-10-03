@@ -88,7 +88,7 @@ main {
 }
 
 #game-graphic {
-    width: 90vw;
+    /* width: 90vw; */
     height: 35vh;
     margin-bottom: 2vh;
 }
@@ -162,7 +162,7 @@ footer {
 }
 
 #new-round {
-    display: flex;
+    display: none;
     text-align: center;
     font-size: xx-large;
     border: 0;
@@ -219,7 +219,7 @@ footer {
     }
 
     #game-graphic {
-        max-width: 400px;
+        /* max-width: 400px; */
         height: 30vh;
     }
 

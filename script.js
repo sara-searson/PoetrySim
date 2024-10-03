@@ -52,6 +52,8 @@ const arrayOfClouds = [cuteWords, sillyWords, happyWords, sadWords, dramaticWord
 
 const judges = ['cute', 'silly', 'happy', 'sad', 'dramatic']
 
+const judgeGreetings = [`Hi hi! I'm Tori, and this is Boscoe, and we're really excited to be here! Just do your best, okay?`, `Well howdy hey! I'm Herb, and I'll be judging your poems today. As a hint, I always love a good chortle!`, `Hello all! Wonderful to see so many of you here today. I hope we all have fun with this!`, `Oh, hey. I'll be judging your poems. I hope at least some of them are good.`, `Well hello! Greetings and salutations to you all. I am absolutely overjoyed to be here today, but remember. Only one of you can journey onward.`]
+
 let wordCloud = []
 
 let page1 = []
@@ -65,6 +67,8 @@ let pageArray = [page1, page2, page3]
 let chosenWords = []
 
 let chosenJudges = []
+
+let currentJudgeGreeting = []
 
 let chosenArrays = []
 
@@ -117,6 +121,7 @@ const pickJudge = () => {
             numbers.push(number)
             chosenJudges.push(judges[number])
             chosenArrays.push(arrayOfClouds[number])
+            currentJudgeGreeting.push(judgeGreetings[number])
         }
     }
 }
@@ -166,8 +171,10 @@ const updateCloud = (pageNum) => {
 
 const setJudgeImage = () => {
     let currentJudge = chosenJudges[turnNumber]
+    let currentGreeting = currentJudgeGreeting[turnNumber]
     gameGraphic.setAttribute ('src', `assets/judges/${currentJudge}Judge.png`)
     console.log(`${currentJudge}Judge`)
+    alert(currentGreeting)
 }
 
 updateCloud(page1)
@@ -224,6 +231,7 @@ const updateNotebook = () => {
 
 const winner = () => {
     if (turnNumber === 2) {
+        gameGraphic.setAttribute('src', 'assets/results/gameWin.png')
         alert('Congrats! You have won the poetry contest!')
         newRound.innerHTML = 'New Game.'
         newRound.style.display = 'flex'
