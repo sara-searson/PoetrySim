@@ -31,11 +31,32 @@ const selWord10 = document.querySelector('#your-word10')
 const notebookWords = document.querySelectorAll('.word-bank')
 const submitWords = document.querySelector('.submit')
 const newRound = document.querySelector('#new-round')
+const finishedPoem = document.querySelector('#finished-poem')
 
 let currentPage = 1
 
 const write = new Audio('assets/soundFX/write.mp3')
 const erase = new Audio('assets/soundFX/erase.mp3')
+
+
+//-----------------------chatGPT stuff-----------------------//
+
+// import OpenAI from "openai";
+// const openai = new OpenAI();
+
+// const completion = await openai.chat.completions.create({
+//     model: "gpt-4o-mini",
+//     messages: [
+//         { role: "system", content: "You are a helpful assistant." },
+//         {
+//             role: "user",
+//             content: "Write a haiku about recursion in programming.",
+//         },
+//     ],
+// });
+
+// console.log(completion.choices[0].message);
+
 
 //-------------------------arrays-------------------------//
 
@@ -76,6 +97,8 @@ let currentJudgeGreeting = []
 let chosenArrays = []
 
 let turnNumber = 0
+
+let prompt = `Write me a ${chosenJudges[turnNumber]} poem containing the words ${chosenWords.join(', ')}.`
 
 //------------------------functions------------------------//
 //---------------------------------------------------------//

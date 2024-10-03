@@ -148,6 +148,12 @@ main {
     height: 18vh;
 }
 
+#poem-display {
+    display: none;
+    grid-area: 1 / 1 / 2 / 3;
+    z-index: 2;
+}
+
 footer {
     display: grid;
     position: relative;
