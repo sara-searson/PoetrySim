@@ -26,16 +26,21 @@ From wireframes:
 to pseudoCode:
 ![a snippet of some pseudocode done for project](assets/pseudoCodeSnippet.png)
 
-to a couple of mockups (I know I didn't need this, I'm sorry):<br />
+to a couple of mockups:<br />
 <img src="assets/basicWeb.png" height="250px">
 <img src="assets/basicMobile.png" height="250px">
 <br />or, even cuter: <br />
 <img src="assets/cuteWeb.png" height="250px">
 <img src="assets/cuteMobile.png" height="250px">
 
-and a simple logo (as above, so below): <br />
+and a simple log: <br />
 <img src="assets/logos/line%20red.png" height="250px">
 
+with a little help from chatGPT: <br />
+<img src="assets/chatGptHelp.png" height="250px">
+
+at the end of it all, we had a finished website! <br />
+<img src="assets/youDidIt.png" height="250px">
 
 
 ## Stretch Goals
@@ -50,9 +55,8 @@ and a simple logo (as above, so below): <br />
 
 ## Credits
 - Used CanvaPro to complete the concept Art, Logo, and other graphics.
-- Additional Links to be added. 
-
-
+- ChatGPT for help with figuring out some of the meatier code.
 - Images generated on Canva
 - Pen Writing Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=38629">Pixabay</a>
 - Erasing Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103161">Pixabay</a>
+- And a special thanks to empty arrays, the Math.random function, and the social zoom room, without which I would be nothing. 
