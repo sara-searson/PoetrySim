@@ -51,3 +51,8 @@ and a simple logo (as above, so below): <br />
 ## Credits
 - Used CanvaPro to complete the concept Art, Logo, and other graphics.
 - Additional Links to be added. 
+
+
+- Images generated on Canva
+- Pen Writing Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=38629">Pixabay</a>
+- Erasing Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103161">Pixabay</a>

@@ -34,6 +34,9 @@ const newRound = document.querySelector('#new-round')
 
 let currentPage = 1
 
+const write = new Audio('assets/soundFX/write.mp3')
+const erase = new Audio('assets/soundFX/erase.mp3')
+
 //-------------------------arrays-------------------------//
 
 const cuteWords = ['snuggle', 'thimble', 'boop', 'sleepy', 'twinkle', 'squishy', 'sweet', 'candy', 'sprinkle', 'daisy', 'bubble', 'giggle', 'toodles', 'flibbertigibbet']
@@ -214,6 +217,7 @@ const addWord = (newWord) => {
         console.log(newWord)
         chosenWords.push(newWord)
         console.log(chosenWords)
+        write.play()
     }
 }
 
@@ -221,6 +225,7 @@ const removeWord = (newWord) => {
     console.log(newWord)
     chosenWords.push(newWord)
     console.log(chosenWords)
+    erase.play()
 }
 
 const updateNotebook = () => {
@@ -351,6 +356,7 @@ wordChoices.forEach((func) => {
 
 notebookWords.forEach((func1) => {
     func1.addEventListener('click', () => {
+        erase.play()
         const textValue = func1.textContent
         chosenWords = chosenWords.filter(word => word !== textValue)
         console.log(textValue)
