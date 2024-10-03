@@ -58,7 +58,7 @@ const arrayOfClouds = [cuteWords, sillyWords, happyWords, sadWords, dramaticWord
 
 const judges = ['cute', 'silly', 'happy', 'sad', 'dramatic']
 
-const judgeGreetings = [`Hi hi! I'm Tori, and this is Boscoe, and we're really excited to be here! Just do your best, okay?`, `Well howdy hey! I'm Herb, and I'll be judging your poems today. As a hint, I always love a good chortle!`, `Hello all! Wonderful to see so many of you here today. I hope we all have fun with this!`, `Oh, hey. I'll be judging your poems. I hope at least some of them are good.`, `Well hello! Greetings and salutations to you all. I am absolutely overjoyed to be here today, but remember. Only one of you can journey onward.`]
+const judgeGreetings = [`Hi hi! I'm Tori, and this is Boscoe, and we're really excited to be here! Just do your best, okay?`, `Well howdy hey! I'm Herb, and I'll be judging your poems today. As a hint, I always love a good chortle!`, `Hello all! Wonderful to see so many of you here today. I hope we all have fun with this!`, `Oh, hey. I'll be judging your poems. I hope at least some of them are good.`, `Well hello! Greetings and salutations to you all. I am honored to be here today, but remember: Only one of you can journey onward.`]
 
 let wordCloud = []
 
@@ -160,9 +160,10 @@ const populateShared = () => {
 }
 
 const pickJudge = () => {
+    chosenJudges.splice(0, chosenJudges.length)
     let numbers = []
     for (let i = 0; i < 3; i++) {
-        let number = Math.floor(Math.random() * 4)
+        let number = Math.floor(Math.random() * 5)
         if (numbers.includes(number)) {
             i--
         } else {
