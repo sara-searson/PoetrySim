@@ -29,34 +29,16 @@ const selWord8 = document.querySelector('#your-word8')
 const selWord9 = document.querySelector('#your-word9')
 const selWord10 = document.querySelector('#your-word10')
 const notebookWords = document.querySelectorAll('.word-bank')
+const selectedWords = document.querySelector('#selected-words')
 const submitWords = document.querySelector('.submit')
 const newRound = document.querySelector('#new-round')
 const finishedPoem = document.querySelector('#finished-poem')
+const poemDisplay = document.querySelector('#poem-display')
 
 let currentPage = 1
 
 const write = new Audio('assets/soundFX/write.mp3')
 const erase = new Audio('assets/soundFX/erase.mp3')
-
-
-//-----------------------chatGPT stuff-----------------------//
-
-// import OpenAI from "openai";
-// const openai = new OpenAI();
-
-// const completion = await openai.chat.completions.create({
-//     model: "gpt-4o-mini",
-//     messages: [
-//         { role: "system", content: "You are a helpful assistant." },
-//         {
-//             role: "user",
-//             content: "Write a haiku about recursion in programming.",
-//         },
-//     ],
-// });
-
-// console.log(completion.choices[0].message);
-
 
 //-------------------------arrays-------------------------//
 
@@ -98,7 +80,47 @@ let chosenArrays = []
 
 let turnNumber = 0
 
-let prompt = `Write me a ${chosenJudges[turnNumber]} poem containing the words ${chosenWords.join(', ')}.`
+//-----------------------chatGPT stuff-----------------------//
+
+
+
+async function generatePoem() {
+
+    const prompt = `Write me a ${chosenJudges[turnNumber]} poem containing the words ${chosenWords.join(', ')} and using only eight lines. Please make sure the poem is complete.`
+    console.log(prompt)
+
+    try {
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: 'gpt-4o-mini',  // Or another GPT model like gpt-4, etc.
+                messages: [
+                    { role: "system", content: "You are a helpful assistant." },  // System-level role
+                    { role: "user", content: prompt }  // User input
+                ],
+                max_tokens: 100,  // Adjust this based on how long you want the poem
+                temperature: 0.7  // Adjust for creativity and randomness
+            })
+        });
+
+        const data = await response.json();
+        console.log(data)
+        const poem = data.choices[0].message.content.trim()
+        let finalPoem = poem.replace(/\n/g, "<br>")
+        console.log(poem)
+        finishedPoem.innerHTML = finalPoem
+
+    } catch (error) {
+        console.error('Error generating poem:', error);
+    }
+} 
+
+//These lines of code were made with a lot of help from chatGPT and some troubleshooting with the guide of previous questions on stackoverflow.com. I take little to no credit for the work done here. There is a screenshot of the code chatGPT gave in the README that has been updated to what you see above. The following was the prompt: I am making a browser based game using javascript in which players choose ten words from a randomized list of words to fit a prompt. I want to use chatgpt to return a poem using the words the player chose, fitting the tone provided by the game. How would I do this? 
+
 
 //------------------------functions------------------------//
 //---------------------------------------------------------//
@@ -284,6 +306,11 @@ const tryAgain = () => {
 
 const scoreTally = () => {
     let score = 0
+    selectedWords.style.display = 'none'
+    submitWords.style.display = 'none'
+    finishedPoem.innerHTML = 'writing...'
+    poemDisplay.style.display = 'flex'
+    generatePoem()
     for (i = 0; i < chosenArrays[turnNumber].length; i++) {
         if (chosenArrays[turnNumber].includes(chosenWords[i])) {
             score++
@@ -320,6 +347,9 @@ const scoreTally = () => {
 const newTurn = () => {
     console.log(chosenJudges)
     console.log(chosenArrays)
+    poemDisplay.style.display = 'none'
+    selectedWords.style.display = 'grid'
+    submitWords.style.display = 'grid'
     setJudgeImage()
     selWord1.innerHTML = 'Start writing!'
     chosenWords.splice(0, chosenWords.length)
