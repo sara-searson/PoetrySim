@@ -33,14 +33,14 @@ to a couple of mockups:<br />
 <img src="assets/cuteWeb.png" height="250px">
 <img src="assets/cuteMobile.png" height="250px">
 
-and a simple log: <br />
-<img src="assets/logos/line%20red.png" height="250px">
+and a simple logo: <br />
+<img src="assets/logos/line%20brown.png" height="250px">
 
 with a little help from chatGPT: <br />
-<img src="assets/chatGptHelp.png" height="250px">
+<img src="assets/chatGptHelp.png" height="400px">
 
 at the end of it all, we had a finished website! <br />
-<img src="assets/youDidIt.png" height="250px">
+<img src="assets/youDidIt.png" width="100%">
 
 
 ## Stretch Goals
